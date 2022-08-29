@@ -1,0 +1,90 @@
+number of nodes: 100000
+random mode
+initial set size: 500
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 50195
+size of group B: 49805
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 500
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 74089
+size of group B: 25911
+-------------------------------------------------------------
+number of nodes: 100000
+random mode
+initial set size: 50
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 51300
+size of group B: 48700
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 50
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 77205
+size of group B: 22795
+-------------------------------------------------------------
+number of nodes: 100000
+random mode
+initial set size: 10
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 49278
+size of group B: 50722
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 10
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 78796
+size of group B: 21204
+-------------------------------------------------------------
+number of nodes: 100000
+random mode
+initial set size: 3
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 47240
+size of group B: 52760
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 3
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 85414
+size of group B: 14586
+-------------------------------------------------------------
+number of nodes: 100000
+random mode
+initial set size: 1
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 35090
+size of group B: 64910
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 1
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 88728
+size of group B: 11272
+-------------------------------------------------------------
