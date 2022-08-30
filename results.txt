@@ -88,3 +88,21 @@ max connections per node: 128
 size of group A: 88728
 size of group B: 11272
 -------------------------------------------------------------
+number of nodes: 100000
+random mode
+initial set size: 3
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 70241
+size of group B: 29759
+-------------------------------------------------------------
+number of nodes: 100000
+worst case mode
+initial set size: 3
+node self initiated connections: 8
+max connections per node: 128
+
+size of group A: 84518
+size of group B: 15482
+-------------------------------------------------------------

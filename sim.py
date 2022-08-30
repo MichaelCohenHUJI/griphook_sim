@@ -1,7 +1,7 @@
 import numpy as np
 import random
 from tqdm import tqdm
-# from scipy import stats
+from scipy import stats
 
 
 def create_adj_mat():
@@ -29,7 +29,7 @@ def create_adj_mat():
     return M
 
 
-def one_step(A: set, B: set, adj_mat: np.array):
+def one_step(A: set, B: set, adj_mat: np.array, simultanous: bool):
     tempA = set()
     tempB = set()
     for node in A:
@@ -44,16 +44,19 @@ def one_step(A: set, B: set, adj_mat: np.array):
     tempA = tempA - joint
     tempB = tempB - joint
     # for each joint element choose by coin flip
-    for elem in joint:
-        if random.random() > 0.5: tempA.add(elem)
-        else: tempB.add(elem)
+    if simultanous:
+        for elem in joint:
+            if random.random() > 0.5: tempA.add(elem)
+            else: tempB.add(elem)
+    else:
+        tempA.update(joint)
     # todo add joint elements always to A when worst case?
     A.update(tempA)
     B.update(tempB)
     return A, B
 
 
-def simulation(max_dif=False):
+def simulation(max_dif=False, simultanous=True):
     # create adj matrix
     adj_mat = create_adj_mat()
     print("finished computing adjacency matrix")
@@ -76,7 +79,7 @@ def simulation(max_dif=False):
     while not end:
         sizeA = len(A)
         sizeB = len(B)
-        A, B = one_step(A, B, adj_mat)
+        A, B = one_step(A, B, adj_mat, simultanous)
         if sizeA == len(A) and sizeB == len(B):
             end = True
         if len(A) + len(B) > counter + 1000:
@@ -91,7 +94,11 @@ def simulation(max_dif=False):
     print("initial set size: " + str(set_size))
     print("node self initiated connections: " + str(initiate_con))
     print("max connections per node: " + str(max_connections))
-
+    _, minmax, avg_cons, var_cons, __, ___, = stats.describe(num_cons)
+    print("avg connections per node: " + str(avg_cons))
+    print("var of connections per node: " + str(var_cons))
+    print("min connections per node: " + str(minmax[0]))
+    print("max connections per node: " + str(minmax[1]))
     print()
     print("size of group A: " + str(len(A)))
     print("size of group B: " + str(len(B)))
@@ -103,12 +110,14 @@ def simulation(max_dif=False):
 
 
 if __name__ == '__main__':
-    n = 100000
+    n = 10000
     set_size = 1
     max_connections = 128
     num_cons = np.zeros(n)
-    initiate_con = 8
-    simulation(max_dif=False)
+    initiate_con = 16
+    simulation(max_dif=False, simultanous=True)
     print("********************* started sim #2 *********************")
-    simulation(max_dif=True)
+    # reset connection numbers
+    num_cons = np.zeros(n)
+    simulation(max_dif=False, simultanous=False)
 
