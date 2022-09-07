@@ -89,8 +89,8 @@ def simulation(max_dif=False, simultanous=True):
     print()
 
     # add neutral nodes
-    ansfota = [1]
-    ansfotb = [1]
+    ansfota = [set_size]
+    ansfotb = [set_size]
     end = False
     counter = 0
     while not end:
@@ -105,6 +105,9 @@ def simulation(max_dif=False, simultanous=True):
         if len(A) + len(B) > counter + 1000:
             percentage = int((len(A) + len(B)) * 100 / n)
             print(str(percentage) + "% of nodes covered")
+    # plot growth rate of each group
+    cuma = np.cumsum(ansfota)
+    cumb = np.cumsum(ansfotb)
     plt.plot(ansfota, label="A")
     plt.plot(ansfotb, label="B")
     plt.xlabel('t')
@@ -113,6 +116,17 @@ def simulation(max_dif=False, simultanous=True):
     plt.legend()
     plt.grid(True)
     plt.show()
+    # plot number of nodes in each group
+    a = np.insert(cuma[:-1], 0, 0)
+    plt.plot(a, cuma, label="A")
+    plt.plot(np.insert(cumb[:-1], 0, 0), cumb, label="B")
+    plt.xlabel('t')
+    plt.ylabel('num. of nodes')
+    plt.title('# of new nodes in each time step')
+    plt.legend()
+    plt.grid(True)
+    plt.show()
+
 
     _, minmax, avg_cons, var_cons, __, ___, = stats.describe(num_cons)
     print("avg connections per node: " + str(avg_cons))
@@ -150,11 +164,13 @@ def single_tx_propagation():
         if len(A) > counter + 1000:
             percentage = int(len(A) * 100 / n)
             print(str(percentage) + "% of nodes covered")
-    print(added_as_func_of_time)
-    plt.plot(added_as_func_of_time)
+    nodes_as_func_of_time = np.cumsum(added_as_func_of_time)
+    print(nodes_as_func_of_time)
+    plt.plot(nodes_as_func_of_time)
     plt.xlabel('t')
-    plt.ylabel('added nodes')
-    plt.title('# of new nodes in each time step')
+    plt.ylabel('total nodes')
+    # plt.title('# of new nodes in each time step')
+    plt.title('total nodes')
     plt.legend()
     plt.grid(True)
     plt.show()
@@ -171,7 +187,7 @@ def single_tx_propagation():
 
 
 if __name__ == '__main__':
-    n = 100000
+    n = 110000
     set_size = 1
     max_connections = 128
     num_cons = np.zeros(n)
@@ -181,11 +197,11 @@ if __name__ == '__main__':
     print("initial set size: " + str(set_size))
     print("node self initiated connections: " + str(initiate_con))
     print("max connections per node: " + str(max_connections))
-    simulation(max_dif=False, simultanous=True)
-    print("********************* started sim #2 *********************")
-    # reset connection numbers
-    num_cons = np.zeros(n)
-    simulation(max_dif=True, simultanous=True)
+    # simulation(max_dif=False, simultanous=True)
+    # print("********************* started sim #2 *********************")
+    # # reset connection numbers
     # num_cons = np.zeros(n)
-    # single_tx_propagation()
+    # simulation(max_dif=False, simultanous=True)
+    # num_cons = np.zeros(n)
+    single_tx_propagation()
 
