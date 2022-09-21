@@ -106,3 +106,100 @@ max connections per node: 128
 size of group A: 84518
 size of group B: 15482
 -------------------------------------------------------------
+
+10 txs, 20 nodes per tx, 10000 nodes
+
+node self initiated connections: 8
+max connections per node: 128
+100%|██████████| 100/100 [08:29<00:00,  5.09s/it]
+description of all results:
+DescribeResult(nobs=1000, minmax=(690, 1422), mean=1000.0, variance=15169.287287287287, skewness=0.2547493553117613, kurtosis=-0.13441829925719562)
+
+----------------------------------------------------------------------
+description for each tx:
+tx 1
+DescribeResult(nobs=100, minmax=(690, 1422), mean=1001.88, variance=16629.379393939395, skewness=0.3176843256804865, kurtosis=0.34374070959904657)
+tx 2
+DescribeResult(nobs=100, minmax=(765, 1323), mean=1014.5, variance=17893.909090909092, skewness=0.47064220316285965, kurtosis=-0.1839047250942536)
+tx 3
+DescribeResult(nobs=100, minmax=(720, 1352), mean=996.97, variance=15774.049595959596, skewness=0.443375522396841, kurtosis=0.434129581529735)
+tx 4
+DescribeResult(nobs=100, minmax=(713, 1313), mean=973.88, variance=14490.93494949495, skewness=0.380213152308301, kurtosis=-0.22052195559791077)
+tx 5
+DescribeResult(nobs=100, minmax=(715, 1330), mean=1006.51, variance=15784.0302020202, skewness=0.07641137081499692, kurtosis=0.03768883509161425)
+tx 6
+DescribeResult(nobs=100, minmax=(709, 1298), mean=995.94, variance=17336.01656565657, skewness=0.1100443264931097, kurtosis=-0.687599533825622)
+tx 7
+DescribeResult(nobs=100, minmax=(756, 1332), mean=997.5, variance=13609.525252525253, skewness=0.3270947643387141, kurtosis=-0.0775084075747321)
+tx 8
+DescribeResult(nobs=100, minmax=(750, 1243), mean=1003.21, variance=12975.359494949493, skewness=-0.07928452459364235, kurtosis=-0.6154532008365265)
+tx 9
+DescribeResult(nobs=100, minmax=(754, 1215), mean=1005.14, variance=12167.091313131314, skewness=-0.058553384355413296, kurtosis=-0.4879749425111375)
+tx 10
+DescribeResult(nobs=100, minmax=(738, 1314), mean=1004.47, variance=15374.191010101009, skewness=0.3440270914634522, kurtosis=-0.4857331017412312)
+
+
+
+------------------------------------------------------------
+
+10 txs, 30 nodes per tx, 10000 nodes
+
+node self initiated connections: 8
+max connections per node: 128
+100%|██████████| 100/100 [08:20<00:00,  5.01s/it]
+description of all results:
+DescribeResult(nobs=1000, minmax=(743, 1382), mean=1000.0, variance=8271.22922922923, skewness=0.29924546476253167, kurtosis=0.24038309503235444)
+description for each tx:
+tx 1
+DescribeResult(nobs=100, minmax=(815, 1228), mean=991.06, variance=7097.996363636363, skewness=0.11916408351329076, kurtosis=-0.2409605260276635)
+tx 2
+DescribeResult(nobs=100, minmax=(784, 1310), mean=1006.02, variance=10321.0501010101, skewness=0.3713948219474892, kurtosis=0.1951414163501477)
+tx 3
+DescribeResult(nobs=100, minmax=(836, 1239), mean=1003.13, variance=6884.094040404041, skewness=0.42511541352778387, kurtosis=0.08853315701461106)
+tx 4
+DescribeResult(nobs=100, minmax=(753, 1293), mean=993.59, variance=8339.234242424243, skewness=0.31142254934960206, kurtosis=0.5901299097948618)
+tx 5
+DescribeResult(nobs=100, minmax=(813, 1231), mean=996.61, variance=8820.684747474748, skewness=0.20303231937922978, kurtosis=-0.2871270566376598)
+tx 6
+DescribeResult(nobs=100, minmax=(803, 1241), mean=993.96, variance=7978.76606060606, skewness=0.29433200268749843, kurtosis=-0.2547702854641485)
+tx 7
+DescribeResult(nobs=100, minmax=(843, 1207), mean=998.76, variance=7693.5377777777785, skewness=0.3789312223033911, kurtosis=-0.36198565494477153)
+tx 8
+DescribeResult(nobs=100, minmax=(798, 1382), mean=1014.14, variance=8376.081212121213, skewness=0.5898515895320696, kurtosis=1.6223351863832711)
+tx 9
+DescribeResult(nobs=100, minmax=(761, 1272), mean=1003.69, variance=8580.034242424243, skewness=0.28388355676273824, kurtosis=0.4579907639204812)
+tx 10
+DescribeResult(nobs=100, minmax=(743, 1216), mean=999.04, variance=8937.35191919192, skewness=-0.04084594353001938, kurtosis=-0.3062967977252562)
+
+--------------------------------------------------------
+10 txs, 40 nodes per tx, 10000 nodes
+
+
+node self initiated connections: 8
+max connections per node: 128
+100%|██████████| 100/100 [08:24<00:00,  5.05s/it]
+description of all results:
+DescribeResult(nobs=1000, minmax=(756, 1240), mean=1000.0, variance=6386.582582582582, skewness=0.0004157995596178398, kurtosis=-0.26794469104077523)
+
+----------------------------------------------------------------------
+description for each tx:
+tx 1
+DescribeResult(nobs=100, minmax=(769, 1177), mean=992.26, variance=6806.840808080808, skewness=-0.2740214670619165, kurtosis=-0.36701706224581665)
+tx 2
+DescribeResult(nobs=100, minmax=(827, 1225), mean=996.35, variance=6116.189393939394, skewness=0.2486029648356436, kurtosis=0.09777083567861533)
+tx 3
+DescribeResult(nobs=100, minmax=(828, 1202), mean=1010.7, variance=7245.303030303032, skewness=0.09798488693298252, kurtosis=-0.7213434213298053)
+tx 4
+DescribeResult(nobs=100, minmax=(805, 1178), mean=1002.25, variance=6638.411616161616, skewness=0.08492633827556754, kurtosis=-0.41843388624883593)
+tx 5
+DescribeResult(nobs=100, minmax=(837, 1172), mean=1009.56, variance=5511.562020202019, skewness=-0.11922801417419439, kurtosis=-0.3731498842448797)
+tx 6
+DescribeResult(nobs=100, minmax=(806, 1197), mean=1005.78, variance=5906.496565656566, skewness=-0.24909712069386833, kurtosis=-0.34772661130729565)
+tx 7
+DescribeResult(nobs=100, minmax=(786, 1240), mean=992.06, variance=6882.46101010101, skewness=0.15927029994159814, kurtosis=0.2913211895399388)
+tx 8
+DescribeResult(nobs=100, minmax=(756, 1221), mean=993.62, variance=7153.571313131314, skewness=0.15597772422527043, kurtosis=-0.13937037836617217)
+tx 9
+DescribeResult(nobs=100, minmax=(810, 1192), mean=996.05, variance=6350.977272727271, skewness=-0.06431400622598778, kurtosis=-0.5302216312628971)
+tx 10
+DescribeResult(nobs=100, minmax=(822, 1158), mean=1001.37, variance=5391.366767676768, skewness=-0.05002709248200575, kurtosis=-0.41812773203825504)

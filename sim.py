@@ -32,7 +32,7 @@ def create_adj_mat(n):
             num_cons[l] += 1
             num_cons[i] += 1
 
-    print("num_cons:" + str(stats.describe(num_cons)))
+    # print("num_cons:" + str(stats.describe(num_cons)))
 
     # plt.hist(num_cons, 128, density=True, facecolor='g', alpha=0.75)
     # plt.xlabel('number of connections')
@@ -50,7 +50,7 @@ def one_step(n: int, sets: list, adj_mat: np.array, simultanous: bool):
     all_added_nodes = []
     for s in sets:
         all_added_nodes += s
-    for i in tqdm(range(n)):  # sort all nodes to their set
+    for i in range(n):  # sort all nodes to their set
         if i not in all_added_nodes:  # node not in a set already
             i_neighbors = np.nonzero(adj_mat[i])
             i_sets = []
@@ -138,7 +138,7 @@ def simulation(n, init_set_sizes, max_dif=False, simultanous=True):
     # add neutral nodes
     nafot = np.array(init_set_sizes).reshape(-1, 1)
     end = False
-    print(sets)
+    # print(sets)
     while not end:
         sets = one_step(n, sets, adj_mat, simultanous)
         cur_added_nodes = 0   # current number of nodes with some tx
@@ -149,7 +149,7 @@ def simulation(n, init_set_sizes, max_dif=False, simultanous=True):
         else:
             for i in range(sets_num):
                 np.append(nafot[i], len(sets[i]))
-        print(cur_added_nodes)
+        # print(cur_added_nodes)
 
     end_sizes = []
     for i in range(sets_num):
@@ -175,8 +175,9 @@ def simulation(n, init_set_sizes, max_dif=False, simultanous=True):
     # print("size of group A: " + str(len(A)))
     # print("size of group B: " + str(len(B)))
     # print("-------------------------------------------------------------")
-    print(end_sizes)
-    return end_sizes
+    # print(end_sizes)
+    end_sizes = np.array(end_sizes)
+    return end_sizes.reshape((3,1))
 
 
 def single_tx_propagation(n, fit_func=None, mode=None):
@@ -282,7 +283,23 @@ if __name__ == '__main__':
     #     single_tx_propagation(logistic_growth, "best")
     #     num_cons = np.zeros(n)
     #     single_tx_propagation(logistic_growth, 'best')
-    simulation(10000, [50, 50, 50, 25])
+    results = []
+    for i in tqdm(range(10)):
+        s = simulation(10000, [30, 60, 120])
+        if i == 0:
+            results = s
+        else:
+            results = np.hstack((results, s))
+
+    print("description of all results:")
+    print(stats.describe(results.flatten()))
+    print()
+    print('----------------------------------------------------------------------')
+    print('description for each tx:')
+    for i, tx in enumerate(results):
+        print('tx ' + str(i + 1))
+        print(stats.describe(tx))
+
 
 
 
